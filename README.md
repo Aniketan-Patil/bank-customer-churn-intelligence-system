@@ -1,4 +1,14 @@
 # 🏦 Predictive Modeling and Risk Scoring for Bank Customer Churn
+## 📚 Research Publication
+
+This project has been published as a research work on Zenodo.
+
+🔗 **Research Paper: https://zenodo.org/records/20435182
+
+### Citation
+
+Aniketan Patil. *Advanced Enterprise Banking Churn Intelligence System using Machine Learning, Explainable AI and Interactive Analytics*. Zenodo, Version 1.0, 2026.
+
 
 ## 📌 Project Overview
 
