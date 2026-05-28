@@ -250,10 +250,14 @@ TABS
 
 /* Mobile Tab Fix */
 
-button[data-baseweb="tab"]{
-    color: white !important;
+.stTabs [data-baseweb="tab"] {
+    color: #f8fafc !important;
     font-size: 14px !important;
-    font-weight: 600 !important;
+    font-weight: 700 !important;
+}
+
+.stTabs [aria-selected="true"] {
+    color: #60a5fa !important;
 }
 
 button[data-baseweb="tab"][aria-selected="true"]{
@@ -274,7 +278,7 @@ button[data-baseweb="tab"][aria-selected="true"]{
 GENERAL TEXT
 ========================= */
 
-p, li {
+p {
     font-size: 17px;
     color: #1e293b;
 }
@@ -1015,8 +1019,12 @@ if st.button("🚀 Run Churn Intelligence Analysis"):
         bar_fig.update_layout(
             paper_bgcolor="white",
             plot_bgcolor="white",
-            font_color="#111827"
+            font=dict(
+            size=14,
+            color="black"
         )
+        )
+
 
         st.plotly_chart(
             bar_fig,
@@ -1175,7 +1183,10 @@ if st.button("🚀 Run Churn Intelligence Analysis"):
 
         cm_fig.update_layout(
             paper_bgcolor="white",
-            font_color="#111827"
+            font=dict(
+            size=14,
+            color="black"
+            )
         )
 
         st.plotly_chart(
@@ -1224,7 +1235,10 @@ if st.button("🚀 Run Churn Intelligence Analysis"):
             yaxis_title="True Positive Rate",
             paper_bgcolor="white",
             plot_bgcolor="white",
-            font_color="#111827"
+            font=dict(
+            size=14,
+            color="black"
+            )
         )
 
         st.plotly_chart(
@@ -1324,7 +1338,10 @@ if st.button("🚀 Run Churn Intelligence Analysis"):
         shap_fig.update_layout(
             paper_bgcolor="white",
             plot_bgcolor="white",
-            font_color="#111827"
+            font=dict(
+            size=14,
+            color="black"
+        )
         )
 
         st.plotly_chart(
