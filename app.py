@@ -202,12 +202,13 @@ METRIC CARDS
 INSIGHT BOX
 ========================= */
 
-.insight-box {
-    background: white;
-    padding: 20px;
-    border-radius: 15px;
-    border-left: 5px solid #2563eb;
-    box-shadow: 0px 4px 12px rgba(0,0,0,0.08);
+.insight-box{
+    background:white;
+    color:#111827 !important;
+    font-weight:600;
+    padding:12px;
+    border-radius:10px;
+    margin-bottom:8px;
 }
 
 /* =========================
@@ -245,6 +246,28 @@ TABS
 .stTabs [data-baseweb="tab"] {
     font-size: 18px;
     font-weight: 600;
+}
+
+/* Mobile Tab Fix */
+
+button[data-baseweb="tab"]{
+    color: white !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+}
+
+button[data-baseweb="tab"][aria-selected="true"]{
+    color: #60a5fa !important;
+    border-bottom: 2px solid #60a5fa !important;
+}
+
+@media (max-width:768px){
+
+    button[data-baseweb="tab"]{
+        font-size: 12px !important;
+        padding: 6px !important;
+    }
+
 }
 
 /* =========================
