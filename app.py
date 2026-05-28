@@ -13,6 +13,7 @@ import numpy as np
 from io import BytesIO
 import shap
 import matplotlib.pyplot as plt
+from streamlit_option_menu import option_menu
 
 # =====================================================
 # PAGE CONFIG
@@ -230,48 +231,78 @@ p, li {
 """, unsafe_allow_html=True)
 
 # =====================================================
-# ENTERPRISE NAVBAR
+
+# REAL ENTERPRISE NAVBAR
+
 # =====================================================
 
-st.markdown("""
-<div style="
-background: linear-gradient(90deg, #0f172a, #1e293b);
-padding: 18px 30px;
-border-radius: 15px;
-margin-bottom: 25px;
-display: flex;
-justify-content: space-between;
-align-items: center;
-box-shadow: 0px 4px 12px rgba(0,0,0,0.15);
-">
+selected = option_menu(
 
-<div style="
-font-size: 28px;
-font-weight: 800;
-color: white;
-">
-🏦 FinSecure Analytics
-</div>
 
-<div style="
-display: flex;
-gap: 28px;
-font-size: 16px;
-font-weight: 700;
-color: #ffffff;
-white-space: nowrap;
-overflow-x: auto;
-">
+menu_title=None,
 
-<span style="color:white;">📊 Dashboard</span>
-<span style="color:white;">⚠️ Risk Analytics</span>
-<span style="color:white;">👥 Customer Insights</span>
-<span style="color:white;">🧠 Executive Intelligence</span>
-<span style="color:white;">📈 Model Monitoring</span>
-</div>
+options=[
+    "Dashboard",
+    "Risk Analytics",
+    "Customer Insights",
+    "Model Evaluation",
+    "AI Explainability"
+],
 
-</div>
-""", unsafe_allow_html=True)
+icons=[
+    "speedometer2",
+    "bar-chart",
+    "people",
+    "graph-up",
+    "cpu"
+],
+
+orientation="horizontal",
+
+default_index=0,
+
+styles={
+
+    "container": {
+        "padding": "8px",
+        "background-color": "#0f172a",
+        "border-radius": "12px",
+        "margin-bottom": "20px"
+    },
+
+    "icon": {
+        "color": "#60a5fa",
+        "font-size": "18px"
+    },
+
+    "nav-link": {
+        "font-size": "16px",
+        "font-weight": "600",
+        "text-align": "center",
+        "margin": "0px",
+        "--hover-color": "#1e293b",
+        "color": "white"
+    },
+
+    "nav-link-selected": {
+        "background-color": "#2563eb",
+        "color": "white"
+    },
+}
+
+
+)
+
+st.markdown(
+"<h1 style='text-align:center;'>🏦 Bank Customer Churn Intelligence System</h1>",
+unsafe_allow_html=True
+)
+
+st.markdown(
+"<p style='text-align:center; font-size:18px;'>Enterprise AI-Powered Banking Risk Intelligence Platform</p>",
+unsafe_allow_html=True
+)
+
 
 # =====================================================
 # LOAD MODEL & SCALER
