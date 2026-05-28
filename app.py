@@ -605,6 +605,82 @@ if st.button("🚀 Run Churn Intelligence Analysis"):
         use_container_width=True
     )
 
+
+    # =====================================================
+
+# AI RETENTION RECOMMENDATIONS
+
+# =====================================================
+
+    st.markdown("## 🎯 AI Retention Recommendations")
+
+    recommendations = []
+
+    if display_probability >= 0.75:
+
+
+        recommendations = [
+
+        "🚨 Assign dedicated relationship manager immediately",
+
+        "💳 Offer premium loyalty retention package",
+
+        "📞 Initiate urgent personalized customer outreach",
+
+        "🎁 Provide exclusive banking incentives",
+
+        "📈 Monitor account activity closely"
+
+        ]
+
+
+    elif display_probability >= 0.50:
+
+
+        recommendations = [
+
+        "📧 Launch targeted engagement campaign",
+
+        "💰 Offer customized financial products",
+
+        "📊 Improve customer interaction frequency",
+
+        "🎯 Recommend personalized banking services",
+
+        "🏦 Encourage product diversification"
+
+        ]
+
+
+    else:
+
+
+        recommendations = [
+
+        "✅ Maintain regular customer engagement",
+
+        "🌟 Promote premium banking opportunities",
+
+        "📈 Encourage long-term financial planning",
+
+        "💎 Provide loyalty appreciation benefits",
+
+        "🤝 Strengthen relationship experience"
+
+        ]
+    
+
+    for rec in recommendations:
+
+    
+        st.markdown(f"""
+            <div class="insight-box">
+            {rec}
+        </div>
+        """, unsafe_allow_html=True)
+
+
+
     # =====================================================
     # TABS
     # =====================================================
