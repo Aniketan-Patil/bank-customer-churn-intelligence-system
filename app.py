@@ -858,13 +858,18 @@ if st.button("🚀 Run Churn Intelligence Analysis"):
 
     gauge.update_layout(
         paper_bgcolor="white",
-        font={'color': "#111827"}
+        font=dict(
+        family="Arial",
+        size=18,
+        color="black"
+    )
     )
 
     st.plotly_chart(
         gauge,
         use_container_width=True
     )
+    
 
 
     # =====================================================
@@ -982,7 +987,11 @@ if st.button("🚀 Run Churn Intelligence Analysis"):
 
         fig.update_layout(
             paper_bgcolor="white",
-            font_color="#111827"
+            font=dict(
+            family="Arial",
+            size=16,
+            color="black"
+        )
         )
 
         st.plotly_chart(
@@ -1020,8 +1029,15 @@ if st.button("🚀 Run Churn Intelligence Analysis"):
             paper_bgcolor="white",
             plot_bgcolor="white",
             font=dict(
-            size=14,
+            family="Arial",
+            size=16,
             color="black"
+        ),
+            xaxis=dict(
+            tickfont=dict(size=14, color="black")
+        ),
+            yaxis=dict(
+            tickfont=dict(size=14, color="black")
         )
         )
 
@@ -1184,9 +1200,10 @@ if st.button("🚀 Run Churn Intelligence Analysis"):
         cm_fig.update_layout(
             paper_bgcolor="white",
             font=dict(
-            size=14,
+            family="Arial",
+            size=16,
             color="black"
-            )
+        )
         )
 
         st.plotly_chart(
@@ -1236,9 +1253,10 @@ if st.button("🚀 Run Churn Intelligence Analysis"):
             paper_bgcolor="white",
             plot_bgcolor="white",
             font=dict(
-            size=14,
+            family="Arial",
+            size=16,
             color="black"
-            )
+        )
         )
 
         st.plotly_chart(
@@ -1339,8 +1357,15 @@ if st.button("🚀 Run Churn Intelligence Analysis"):
             paper_bgcolor="white",
             plot_bgcolor="white",
             font=dict(
-            size=14,
+            family="Arial",
+            size=16,
             color="black"
+        ),
+            xaxis=dict(
+            tickfont=dict(size=14, color="black")
+        ),
+            yaxis=dict(
+            tickfont=dict(size=14, color="black")
         )
         )
 
