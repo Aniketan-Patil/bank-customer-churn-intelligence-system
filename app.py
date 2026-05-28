@@ -14,6 +14,18 @@ from io import BytesIO
 import shap
 import matplotlib.pyplot as plt
 from streamlit_option_menu import option_menu
+from reportlab.platypus import SimpleDocTemplate
+from reportlab.platypus import Paragraph
+from reportlab.platypus import Spacer
+from reportlab.lib.styles import getSampleStyleSheet
+from reportlab.lib.pagesizes import letter
+from reportlab.pdfbase.pdfmetrics import stringWidth
+from reportlab.platypus.flowables import PageBreak
+from reportlab.lib import colors
+from reportlab.platypus.tables import Table, TableStyle
+from reportlab.platypus import Image
+from reportlab.platypus import KeepTogether
+
 
 # =====================================================
 # PAGE CONFIG
@@ -486,6 +498,210 @@ input_scaled = scaler.transform(input_data)
 # PREDICTION
 # =====================================================
 
+# =====================================================
+
+# PDF REPORT GENERATION FUNCTION
+
+# =====================================================
+
+def generate_pdf_report():
+
+        pdf_buffer = BytesIO()
+
+        doc = SimpleDocTemplate(
+            pdf_buffer,
+            pagesize=letter
+        )
+
+        styles = getSampleStyleSheet()
+
+        elements = []
+
+        # =====================================================
+        # TITLE
+        # =====================================================
+
+        title = Paragraph(
+            "<b>Bank Customer Churn Intelligence Report</b>",
+            styles['Title']
+        )
+
+        elements.append(title)
+        elements.append(Spacer(1, 20))
+
+    # =====================================================
+    # CUSTOMER DATA TABLE
+    # =====================================================
+
+        data = [
+
+            ["Metric", "Value"],
+
+            ["Churn Probability", f"{display_probability:.2%}"],
+
+            ["Retention Probability", f"{display_retention:.2%}"],
+
+            ["Risk Category", risk],
+
+            ["Customer Segment", segment],
+
+            ["Credit Score", credit_score],
+
+            ["Age", age],
+
+            ["Tenure", tenure],
+
+            ["Balance", f"${balance:,.2f}"],
+
+            ["Number of Products", num_products],
+
+            ["Estimated Salary", f"${salary:,.2f}"],
+
+            ["Geography", geography],
+
+            ["Gender", gender]
+
+            ]
+
+def generate_pdf_report():
+
+        pdf_buffer = BytesIO()
+
+        doc = SimpleDocTemplate(
+            pdf_buffer,
+            pagesize=letter
+        )
+
+        styles = getSampleStyleSheet()
+
+        elements = []
+
+        # =====================================================
+        # TITLE
+        # =====================================================
+
+        title = Paragraph(
+            "<b>Bank Customer Churn Intelligence Report</b>",
+            styles['Title']
+        )
+
+        elements.append(title)
+
+        elements.append(Spacer(1, 20))
+
+        # =====================================================
+        # CUSTOMER DATA TABLE
+        # =====================================================
+
+        data = [
+
+            ["Metric", "Value"],
+
+            ["Churn Probability", f"{display_probability:.2%}"],
+
+            ["Retention Probability", f"{display_retention:.2%}"],
+
+            ["Risk Category", risk],
+
+            ["Customer Segment", segment],
+
+            ["Credit Score", credit_score],
+
+            ["Age", age],
+
+            ["Tenure", tenure],
+
+            ["Balance", f"${balance:,.2f}"],
+
+            ["Number of Products", num_products],
+
+            ["Estimated Salary", f"${salary:,.2f}"],
+
+            ["Geography", geography],
+
+            ["Gender", gender]
+
+        ]
+
+        table = Table(
+            data,
+            colWidths=[220, 220]
+        )
+
+        table.setStyle(TableStyle([
+
+            ('BACKGROUND', (0,0), (-1,0), colors.HexColor("#1e293b")),
+
+            ('TEXTCOLOR', (0,0), (-1,0), colors.white),
+
+            ('GRID', (0,0), (-1,-1), 1, colors.grey),
+
+            ('FONTNAME', (0,0), (-1,0), 'Helvetica-Bold'),
+
+            ('BACKGROUND', (0,1), (-1,-1), colors.whitesmoke),
+
+            ('BOTTOMPADDING', (0,0), (-1,0), 10)
+
+        ]))
+
+        elements.append(table)
+
+        elements.append(Spacer(1, 25))
+
+        # =====================================================
+        # RECOMMENDATIONS
+        # =====================================================
+
+        recommendation_title = Paragraph(
+            "<b>AI Retention Recommendations</b>",
+            styles['Heading2']
+        )
+
+        elements.append(recommendation_title)
+
+        for rec in recommendations:
+
+            para = Paragraph(
+                f"• {rec}",
+                styles['BodyText']
+            )
+
+            elements.append(para)
+
+        elements.append(Spacer(1, 20))
+
+        # =====================================================
+        # BUSINESS INSIGHT
+        # =====================================================
+
+        insight = Paragraph(
+
+            """
+            This enterprise banking intelligence report was generated using
+            machine learning-driven churn prediction and explainable AI analytics.
+            The recommendations provided aim to improve customer retention,
+            reduce churn risk, and strengthen banking engagement strategies.
+            """,
+
+            styles['BodyText']
+
+        )
+
+        elements.append(insight)
+
+        # =====================================================
+        # BUILD PDF
+        # =====================================================
+
+        doc.build(elements)
+
+        pdf_buffer.seek(0)
+
+        return pdf_buffer
+
+
+
+
 if st.button("🚀 Run Churn Intelligence Analysis"):
 
     probability = model.predict_proba(
@@ -510,8 +726,8 @@ if st.button("🚀 Run Churn Intelligence Analysis"):
     # =====================================================
 
     # =====================================================
-# CUSTOMER SEGMENTATION
-# =====================================================
+    # CUSTOMER SEGMENTATION
+    # =====================================================
 
     if display_probability < 0.25:
 
@@ -854,6 +1070,28 @@ if st.button("🚀 Run Churn Intelligence Analysis"):
         file_name=f"customer_risk_report_{risk.replace(' ','_')}.csv",
         mime="text/csv"
     )
+# =====================================================
+
+# PDF DOWNLOAD
+
+# =====================================================
+
+    pdf_file = generate_pdf_report()
+
+    st.download_button(
+
+        
+    label="📄 Download Professional PDF Report",
+
+    data=pdf_file,
+
+    file_name="Bank_Churn_Intelligence_Report.pdf",
+
+    mime="application/pdf"
+        
+
+    )
+
     # =====================================================
     # TAB 4
     # =====================================================
