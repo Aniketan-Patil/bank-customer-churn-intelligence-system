@@ -987,13 +987,25 @@ if st.button("🚀 Run Churn Intelligence Analysis"):
 
         fig.update_layout(
             paper_bgcolor="white",
+            plot_bgcolor="white",
             font=dict(
             family="Arial",
             size=16,
             color="black"
+        ),
+            legend=dict(
+            font=dict(
+            size=16,
+            color="black"
+        )
         )
         )
 
+
+        fig.update_traces(
+            textfont_size=16,
+            textfont_color="black"
+        )
         st.plotly_chart(
             fig,
             use_container_width=True
