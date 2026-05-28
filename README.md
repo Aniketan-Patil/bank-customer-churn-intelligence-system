@@ -147,6 +147,42 @@ The platform intelligently categorizes customers into:
 ✅ Downloadable Reports
 ✅ Executive Insights
 
+# 📸 Dashboard Preview
+
+## 🏠 Main Dashboard
+
+![Dashboard](outputs/screenshots/dashboard.png)
+
+---
+
+## 📊 Customer Risk Analytics
+
+![Analytics](outputs/screenshots/analytics.png)
+
+---
+
+## 📌 Feature Importance Analysis
+
+![Features](outputs/screenshots/feature.png)
+
+---
+
+## 🧠 Model Evaluation
+
+![Evaluation](outputs/screenshots/evaluation.png)
+
+---
+
+## 🔍 Explainable AI (SHAP)
+
+![SHAP](outputs/screenshots/shap.png)
+
+---
+
+## 📊 KPI Executive Dashboard
+
+![KPI](outputs/screenshots/kpi.png)
+
 ---
 
 # 📈 Business Impact
