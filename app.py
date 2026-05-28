@@ -44,6 +44,23 @@ st.set_page_config(
 st.markdown("""
 <style>
 
+.stDownloadButton button {
+    width: 100%;
+    height: 55px;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+
+    .stDownloadButton button {
+        height: 60px;
+        font-size: 18px;
+    }
+
+}
+
 /* =========================
 MAIN BACKGROUND
 ========================= */
@@ -288,12 +305,13 @@ styles={
     },
 
     "nav-link": {
-        "font-size": "16px",
-        "font-weight": "600",
-        "text-align": "center",
-        "margin": "0px",
-        "--hover-color": "#1e293b",
-        "color": "white"
+    "font-size": "14px",
+    "font-weight": "600",
+    "text-align": "center",
+    "margin": "0px",
+    "--hover-color": "#1e293b",
+    "color": "#111827",
+    "background-color": "#f8fafc"
     },
 
     "nav-link-selected": {
