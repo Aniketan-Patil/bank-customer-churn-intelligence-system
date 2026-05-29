@@ -1176,6 +1176,22 @@ if st.button("🚀 Run Churn Intelligence Analysis"):
     with tab4:
 
         st.subheader("Model Performance Evaluation")
+        col1, col2, col3, col4, col5 = st.columns(5)
+
+        with col1:
+            st.metric("Accuracy", "97.35%")
+
+        with col2:
+            st.metric("Precision", "97.49%")
+
+        with col3:
+            st.metric("Recall", "88.80%")
+
+        with col4:
+            st.metric("F1 Score", "92.94%")
+
+        with col5:
+            st.metric("ROC-AUC", "98.54%")
 
         # SAMPLE VALUES FOR VISUALIZATION
 
@@ -1269,13 +1285,14 @@ if st.button("🚀 Run Churn Intelligence Analysis"):
 
         <h3>Model Evaluation Insights</h3>
 
-        <ul>
-        <li>ROC-AUC demonstrates strong classification capability.</li>
-        <li>Threshold optimization improves churn detection sensitivity.</li>
-        <li>Confusion matrix provides false-positive and false-negative analysis.</li>
-        <li>Model performance supports proactive banking retention strategies.</li>
-        <li>Enterprise churn monitoring enables risk-driven customer engagement.</li>
+        <h3>Model Evaluation Insights</h3>
 
+        <ul>
+        <li><b>Accuracy (97.35%)</b>  Strong overall predictive performance.</li>
+        <li><b>Precision (97.49%)</b> Highly reliable churn-risk identification.</li>
+        <li><b>Recall (88.80%)</b>  Effective detection of customers likely to churn.</li>
+        <li><b>F1 Score (92.94%)</b>  Strong balance between precision and recall.</li>
+        <li><b>ROC-AUC (98.54%)</b>  Excellent customer churn discrimination capability.</li>
         </ul>
 
         </div>
