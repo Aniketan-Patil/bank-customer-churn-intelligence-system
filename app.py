@@ -1210,19 +1210,7 @@ if st.button("🚀 Run Churn Intelligence Analysis"):
         y_pred = (y_scores >= 0.35).astype(int)
 
         
-        m1, m2, m3, m4 = st.columns(4)
-
-        with m1:
-            st.metric("Accuracy", "87%")
-
-        with m2:
-            st.metric("Precision", "80%")
-
-        with m3:
-            st.metric("Recall", "60%")
-
-        with m4:
-            st.metric("ROC-AUC", "85%")
+        
         # =====================================================
         # ROC CURVE
         # =====================================================
