@@ -3,7 +3,7 @@
 
 This project has been published as a research work on Zenodo.
 
-🔗 **Research Paper: https://zenodo.org/records/20435182
+🔗 **Research Paper: https://zenodo.org/records/20532228
 
 ### Citation
 
