@@ -282,7 +282,51 @@ p {
     font-size: 17px;
     color: #1e293b;
 }
+/* =====================================
+FIX DROPDOWN OPTION TEXT
+===================================== */
 
+div[data-baseweb="popover"] ul li {
+    color: black !important;
+    background-color: white !important;
+}
+
+div[data-baseweb="popover"] ul li span {
+    color: black !important;
+}
+
+/* =====================================
+FIX DOWNLOAD BUTTON TEXT
+===================================== */
+
+.stDownloadButton button {
+    color: white !important;
+}
+
+.stDownloadButton button span {
+    color: white !important;
+}
+
+.stDownloadButton button p {
+    color: white !important;
+}
+
+/* =====================================
+FIX TAB TEXT
+===================================== */
+
+button[data-baseweb="tab"] {
+    color: white !important;
+    font-weight: 700 !important;
+}
+
+button[data-baseweb="tab"] span {
+    color: white !important;
+}
+
+button[data-baseweb="tab"] p {
+    color: white !important;
+}
 </style>
 """, unsafe_allow_html=True)
 
