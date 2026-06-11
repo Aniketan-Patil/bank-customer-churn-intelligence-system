@@ -1,4 +1,10 @@
 # 🏦 Predictive Modeling and Risk Scoring for Bank Customer Churn
+## 🌐 Live Demo
+
+**Streamlit Application:**
+
+https://bank-customer-churn-intelligence-system-kyzq2kqzbaglgnmkgdtfc6.streamlit.app/
+
 ## 📚 Research Publication
 
 This project has been published as a research work on Zenodo.
